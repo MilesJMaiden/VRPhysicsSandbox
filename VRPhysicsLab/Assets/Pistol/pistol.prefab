@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &732720025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732720026}
+  m_Layer: 7
+  m_Name: Left Attach Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &732720026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732720025}
+  m_LocalRotation: {x: -0.19210736, y: 0.004911928, z: -0.0020445904, w: 0.98135954}
+  m_LocalPosition: {x: 0.0075, y: 0.0075, z: -0.0075}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4511655667520052993}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -22.15, y: 0.645, z: -0.365}
 --- !u!1 &1673581188
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1673581189}
   m_Layer: 7
-  m_Name: Attach Transform
+  m_Name: Right Attach Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,8 +73,8 @@ GameObject:
   - component: {fileID: 4511655667520052993}
   - component: {fileID: 2048723223}
   - component: {fileID: 2048723222}
-  - component: {fileID: 2048723221}
   - component: {fileID: 409894410724679379}
+  - component: {fileID: 2048723225}
   m_Layer: 7
   m_Name: pistol
   m_TagString: Untagged
@@ -66,6 +97,7 @@ Transform:
   - {fileID: 4511655667520052997}
   - {fileID: 4511655667520052999}
   - {fileID: 1673581189}
+  - {fileID: 732720026}
   - {fileID: 3092598226382115131}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,7 +131,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2048723221
+--- !u!114 &409894410724679379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +140,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4511655667520406305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 9364fe650143538419c72829fd9d138f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6582456807477404641, guid: 837c6000e4b9eea4f9eeefcb4f96fc65, type: 3}
+  bulletOrigin: {fileID: 0}
+  fireSpeed: 20
+--- !u!114 &2048723225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511655667520406305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95202a86d72c8949b9f62971e73fd31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -180,7 +227,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 1673581189}
+  m_AttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -224,21 +271,8 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &409894410724679379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511655667520406305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9364fe650143538419c72829fd9d138f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 6582456807477404641, guid: 837c6000e4b9eea4f9eeefcb4f96fc65, type: 3}
-  bulletOrigin: {fileID: 0}
-  fireSpeed: 20
+  rightAttachTransform: {fileID: 1673581189}
+  leftAttachTransform: {fileID: 732720026}
 --- !u!1 &4511655667520406309
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,5 +468,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4511655667520052993}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
