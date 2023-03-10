@@ -2389,7 +2389,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   turnSpeed: 60
+  jumpHeight: 1.5
   snapTurnAngle: 45
+  onlyMoveWhenGrounded: 0
+  jumpWithHand: 1
+  minJumpWithHandSpeed: 2
+  maxJumpWithHandSpeed: 7
   moveInputSource:
     m_UseReference: 1
     m_Action:
@@ -2414,12 +2419,26 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  jumpInputSource:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Jump Input Source
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d722ceab-da36-4089-ada7-b65a7c23a2c6
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -75630428134957572, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rb: {fileID: 1759865273}
+  rightHandRB: {fileID: 1279437203}
+  leftHandRB: {fileID: 1123114306}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
   directionSource: {fileID: 936711508}
-  turnSource: {fileID: 0}
+  turnSource: {fileID: 936711508}
   bodyCollider: {fileID: 820512133}
 --- !u!1 &820512131
 GameObject:
